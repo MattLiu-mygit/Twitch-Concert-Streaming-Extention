@@ -1,0 +1,119 @@
+{
+  "allowHttpBackend": false,
+  "backendCommand": "",
+  "backendFolderName": "",
+  "certificateExceptions": [
+    {
+      "isAllowed": true,
+      "isEphemeral": false,
+      "isOrigin": true,
+      "value": "https://localhost:8080"
+    },
+    {
+      "isAllowed": true,
+      "isEphemeral": false,
+      "isOrigin": true,
+      "value": "wss://localhost:8080"
+    }
+  ],
+  "extensionViews": [
+    {
+      "channelId": "173673455",
+      "configurationAnchor": "panel",
+      "displayChannelName": "echooooooooooooooooooo",
+      "features": {
+        "isBitsEnabled": true,
+        "isChatEnabled": true,
+        "isSubscriptionStatusAvailable": true
+      },
+      "frameSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "id": "1",
+      "isPopout": false,
+      "label": "OverlayExtension",
+      "linked": false,
+      "linkedUserId": "",
+      "orientation": "Portrait",
+      "type": "video_overlay",
+      "viewerType": "Broadcaster"
+    }
+  ],
+  "manifest": {
+    "anchor": "panel",
+    "assetUrls": [],
+    "authorName": "Matt",
+    "bitsEnabled": false,
+    "canInstall": true,
+    "configUrl": "https://localhost:8080/config.html",
+    "configurationLocation": "none",
+    "description": "Concert Extension",
+    "eulaTosUrl": "",
+    "hasChatSupport": false,
+    "iconUrl": "",
+    "iconUrls": {},
+    "id": "pho2bsm2v6vmt2ugk5fe3o6wtlsoe7",
+    "installationCount": -42,
+    "liveConfigUrl": "",
+    "name": "Concert",
+    "panelHeight": 300,
+    "privacyPolicyUrl": "",
+    "requestIdentityLink": false,
+    "requiredBroadcasterAbilities": [],
+    "screenshotUrls": [],
+    "sku": "",
+    "state": "Testing",
+    "subscriptionsSupportLevel": "none",
+    "summary": "Concert Extension",
+    "supportEmail": "mliu78@jh.edu",
+    "vendorCode": "",
+    "version": "0.0.1",
+    "viewerSummary": "",
+    "viewerUrl": "https://localhost:8080/panel.html",
+    "viewerUrls": {
+      "mobile": "https://localhost:8080/mobile.html",
+      "panel": "https://localhost:8080/panel.html",
+      "videoOverlay": "https://localhost:8080/video_overlay.html",
+      "component": "https://localhost:8080/video_component.html"
+    },
+    "views": {
+      "mobile": {
+        "viewerUrl": "https://localhost:8080/mobile.html"
+      },
+      "panel": {
+        "viewerUrl": "https://localhost:8080/panel.html",
+        "height": 300,
+        "canLinkExternalContent": false
+      },
+      "videoOverlay": {
+        "viewerUrl": "https://localhost:8080/video_overlay.html",
+        "canLinkExternalContent": false
+      },
+      "component": {
+        "viewerUrl": "https://localhost:8080/video_component.html",
+        "aspectWidth": 0,
+        "aspectHeight": 0,
+        "aspectRatioX": 300,
+        "aspectRatioY": 200,
+        "scalePixels": 1024,
+        "targetHeight": 4000,
+        "size": 0,
+        "zoom": false,
+        "zoomPixels": 0,
+        "canLinkExternalContent": false,
+        "autoScale": true
+      },
+      "config": {
+        "viewerUrl": "https://localhost:8080/config.html",
+        "canLinkExternalContent": false
+      }
+    },
+    "whitelistedConfigUrls": [],
+    "whitelistedPanelUrls": []
+  },
+  "frontendCommand": "npm run-script host",
+  "frontendFolderName": "C:\\Users\\MatthewNJ\\richv1\\extensions-boilerplate",
+  "name": "Concert",
+  "version": 2
+}
