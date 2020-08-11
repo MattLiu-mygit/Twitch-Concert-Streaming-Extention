@@ -1,6 +1,9 @@
 import React from 'react';
 import Authentication from '../../util/Authentication/Authentication';
 import HeartClicker from '../interactive/HeartClicker';
+import { Provider as ReduxProvider } from 'react-redux';
+import configureStore from '../../redux/configureStore';
+const store = configureStore();
 
 import './App.css';
 
@@ -78,16 +81,24 @@ export default class App extends React.Component {
   render() {
     if (this.state.finishedLoading && this.state.isVisible) {
       return (
-        <div className="App">
-          <div
-            className={this.state.theme === 'light' ? 'App-light' : 'App-dark'}
-          >
-            <HeartClicker />
+        <ReduxProvider store={store}>
+          <div className="App">
+            <div
+              className={
+                this.state.theme === 'light' ? 'App-light' : 'App-dark'
+              }
+            >
+              <HeartClicker />
+            </div>
           </div>
-        </div>
+        </ReduxProvider>
       );
     } else {
-      return <div className="App">Not working</div>;
+      return (
+        <div className="App">
+          <h1 style={{ color: 'white' }}>Not working</h1>
+        </div>
+      );
     }
   }
 }

@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import heart from './like.png';
+import HeartSpout from './HeartSpout';
+import * as heartPlumeActions from '../../redux/actions/heartPlumeActions';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 const heartStyles = {
-  heart: {
+  heartStyle: {
     backgroundColor: 'transparent',
     boxShadow: 'none',
     border: 'none',
@@ -13,19 +17,56 @@ const heartStyles = {
     display: 'inline-block',
     textAlign: 'center',
     padding: '0rem',
+    width: '5vw',
     outline: 'none',
   },
 };
 
 const HeartClicker = () => {
-  const handleClick = () => {};
+  const [width, setWidth] = useState(5);
+  const [hearts, setHearts] = useState(false);
+
+  const handleClick = () => {
+    setWidth(4);
+    setHearts(true);
+    setTimeout(() => {
+      setWidth(5);
+    }, 100);
+
+    addHeart();
+  };
+
   return (
     <>
-      <button onClick={handleClick} style={heartStyles.heart}>
-        <img src={heart} style={{ margin: '0rem', width: '5vw' }} />
+      {/* <HeartSpout /> */}
+      <button
+        className="heartButton"
+        onClick={handleClick}
+        style={heartStyles.heartStyle}
+      >
+        <img src={heart} style={{ margin: '0rem', width: `${width}vw` }} />
       </button>
+      {hearts ? (
+        <>
+          <HeartSpout setHearts={setHearts} />
+        </>
+      ) : null}
     </>
   );
 };
 
-export default HeartClicker;
+function mapStateToProps(state) {
+  return {
+    heartPlume: state.heartPlume,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: {
+      setHeartPlume: bindActionCreators(heartPlumeActions, dispatch),
+    },
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HeartClicker);

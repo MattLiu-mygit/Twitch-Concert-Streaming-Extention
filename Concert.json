@@ -112,7 +112,7 @@
     "whitelistedConfigUrls": [],
     "whitelistedPanelUrls": []
   },
-  "frontendCommand": "npm run-script host",
+  "frontendCommand": "npm start",
   "frontendFolderName": "C:\\Users\\MatthewNJ\\richv1\\extensions-boilerplate",
   "name": "Concert",
   "version": 2
