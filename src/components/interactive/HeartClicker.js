@@ -24,16 +24,20 @@ const heartStyles = {
 
 const HeartClicker = () => {
   const [width, setWidth] = useState(5);
-  const [hearts, setHearts] = useState(false);
+  const [heartsArray, setHeartsArray] = useState([]);
+  const [count, setCount] = useState(0);
+
+  const removeHeart = (id) => {
+    heartsArray.filter((entry) => entry !== id);
+  };
 
   const handleClick = () => {
     setWidth(4);
-    setHearts(true);
+    setHeartsArray([...heartsArray, count + 1]);
+    setCount(count + 1);
     setTimeout(() => {
       setWidth(5);
     }, 100);
-
-    addHeart();
   };
 
   return (
@@ -46,11 +50,9 @@ const HeartClicker = () => {
       >
         <img src={heart} style={{ margin: '0rem', width: `${width}vw` }} />
       </button>
-      {hearts ? (
-        <>
-          <HeartSpout setHearts={setHearts} />
-        </>
-      ) : null}
+      {heartsArray.map((entry) => (
+        <HeartSpout key={entry.id} heartId={entry} removeHeart={removeHeart} />
+      ))}
     </>
   );
 };

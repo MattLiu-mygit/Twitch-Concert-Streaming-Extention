@@ -8,7 +8,6 @@ const heartStyles = {
     boxShadow: 'none',
     border: 'none',
     position: 'absolute',
-    right: '5%',
     color: 'pink',
     display: 'inline-block',
     textAlign: 'center',
@@ -21,22 +20,51 @@ const heartStyles = {
 const HeartSpout = (props) => {
   const [height, setHeight] = useState(80);
   const [update, setUpdate] = useState(true);
+  const [horizontal, setHorizontal] = useState(5);
+  const [left, setLeft] = useState(true);
+
+  const horizontalRange = 5 * Math.random();
 
   useEffect(() => {
     if (update) {
       setTimeout(() => {
-        setHeight(0.995 * height);
-      }, 1);
+        setHeight(0.98 * height);
+      }, 10);
     }
+
+    if (height > 10 && horizontal < 5 + horizontalRange && left) {
+      setTimeout(() => {
+        setHorizontal(horizontal + 0.1);
+      }, 10);
+    } else if (horizontal >= 5 + horizontalRange && left) {
+      setLeft(false);
+    }
+
+    if (height > 10 && horizontal > 5 - horizontalRange && !left) {
+      setTimeout(() => {
+        setHorizontal(horizontal - 0.1);
+      }, 10);
+    } else if (horizontal <= 5 + horizontalRange && !left) {
+      setLeft(true);
+    }
+
     if (height <= 10) {
       setUpdate(false);
-      props.setHearts(false);
+      props.removeHeart(props.heartId);
     }
   }, [height]);
+
   return (
     <>
-      {height > 5 ? (
-        <img src={heart} style={{ ...heartStyles.heart, top: `${height}%` }} />
+      {height > 10 ? (
+        <img
+          src={heart}
+          style={{
+            ...heartStyles.heart,
+            top: `${height}%`,
+            right: `${horizontal}%`,
+          }}
+        />
       ) : null}
     </>
   );
