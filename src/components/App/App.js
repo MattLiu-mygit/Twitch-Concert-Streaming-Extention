@@ -6,6 +6,7 @@ import configureStore from '../../redux/configureStore';
 const store = configureStore();
 
 import './App.css';
+import SideDashboard from '../interactive/SideDashboard';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -88,6 +89,7 @@ export default class App extends React.Component {
                 this.state.theme === 'light' ? 'App-light' : 'App-dark'
               }
             >
+              <SideDashboard />
               <HeartClicker />
             </div>
           </div>
