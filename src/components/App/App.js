@@ -3,6 +3,8 @@ import Authentication from '../../util/Authentication/Authentication';
 import HeartClicker from '../interactive/HeartClicker';
 import { Provider as ReduxProvider } from 'react-redux';
 import configureStore from '../../redux/configureStore';
+import Filter from '../Filter';
+import BreakableHearts from '../interactive/BreakableHearts';
 const store = configureStore();
 
 import './App.css';
@@ -84,6 +86,7 @@ export default class App extends React.Component {
       return (
         <ReduxProvider store={store}>
           <div className="App">
+            <Filter />
             <div
               className={
                 this.state.theme === 'light' ? 'App-light' : 'App-dark'
@@ -92,6 +95,7 @@ export default class App extends React.Component {
               <SideDashboard />
               <HeartClicker />
             </div>
+            <BreakableHearts />
           </div>
         </ReduxProvider>
       );
