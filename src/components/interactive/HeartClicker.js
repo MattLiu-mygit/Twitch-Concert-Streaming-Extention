@@ -46,7 +46,7 @@ const HeartClicker = () => {
       <button
         className="heartButton"
         onClick={handleClick}
-        style={heartStyles.heartStyle}
+        style={{ ...heartStyles.heartStyle, zIndex: '99999' }}
       >
         <img src={heart} style={{ margin: '0rem', width: `${width}vw` }} />
       </button>
