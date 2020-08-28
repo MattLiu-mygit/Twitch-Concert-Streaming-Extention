@@ -23,7 +23,7 @@ const heartStyles = {
   },
 };
 
-const HeartClicker = () => {
+const HeartClicker = (props) => {
   const [width, setWidth] = useState(5);
   const [heartsArray, setHeartsArray] = useState([]);
   const [count, setCount] = useState(0);
@@ -33,6 +33,7 @@ const HeartClicker = () => {
   };
 
   const handleClick = () => {
+    props.setScore(props.score + 1);
     setWidth(4);
     setHeartsArray([...heartsArray, count + 1]);
     setCount(count + 1);

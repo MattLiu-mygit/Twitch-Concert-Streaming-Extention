@@ -9,6 +9,7 @@ const Screen = () => {
   const [filter, setFilter] = useState(false);
   const [generator, setGenerator] = useState(false);
   const [bois, setBois] = useState([]);
+  const [score, setScore] = useState(0);
 
   const clickDatBoi = () => {
     setBois([...bois, bois.length]);
@@ -33,8 +34,8 @@ const Screen = () => {
       >
         Toggle Filter
       </button>
-      <SideDashboard setDatBoi={clickDatBoi} />
-      <HeartClicker />
+      <SideDashboard setDatBoi={clickDatBoi} score={score} />
+      <HeartClicker setScore={setScore} score={score} />
       {generator ? (
         <>
           <HeartScreenGenerator />

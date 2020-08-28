@@ -24,6 +24,14 @@ const SideDashboard = (props) => {
             >
               DatBoi
             </button>
+            <h3
+              style={{
+                backgroundColor: 'rgba(255,192,203, 1)',
+                margin: '1vw',
+              }}
+            >
+              Click score is ~${props.score}~!
+            </h3>
           </div>
         ) : null}
       </div>
