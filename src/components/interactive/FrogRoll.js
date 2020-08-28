@@ -3,7 +3,7 @@ import datboii from './datboii.gif';
 
 const DatBoi = () => {
   const [rendered, setRendered] = useState(true);
-  const [horizontal, setHorizontal] = useState(110);
+  const [horizontal, setHorizontal] = useState(100);
 
   useEffect(() => {
     if (horizontal >= -25) {
