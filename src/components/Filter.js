@@ -1,5 +1,5 @@
 import React from 'react';
-import pepelaugh from './pepelaugh.jpg';
+import testFilter from './testFilter.png';
 
 const Filter = () => {
   return (
@@ -13,7 +13,7 @@ const Filter = () => {
         top: '0vw',
       }}
     >
-      <img src={pepelaugh} style={{ width: '100%' }} />
+      <img src={testFilter} style={{ width: '100%' }} />
     </div>
   );
 };
