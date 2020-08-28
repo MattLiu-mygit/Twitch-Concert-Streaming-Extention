@@ -17,6 +17,13 @@ const SideDashboard = (props) => {
         {dashboardOpen ? (
           <div style={{ ...styles.dashboard, zIndex: '100000' }}>
             <img src={model1} style={{ width: '100%', opacity: '0.75' }} />
+            <button
+              onClick={() => {
+                props.setDatBoi();
+              }}
+            >
+              DatBoi
+            </button>
           </div>
         ) : null}
       </div>

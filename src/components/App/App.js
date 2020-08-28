@@ -10,6 +10,8 @@ const store = configureStore();
 import './App.css';
 import SideDashboard from '../interactive/SideDashboard';
 import HeartScreenGenerator from '../interactive/HeartScreenGenerator';
+import FrogRoll from '../interactive/FrogRoll';
+import Screen from '../Screen';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -22,8 +24,6 @@ export default class App extends React.Component {
       finishedLoading: false,
       theme: 'light',
       isVisible: true,
-      generator: false,
-      filter: false,
     };
   }
 
@@ -89,43 +89,13 @@ export default class App extends React.Component {
       return (
         <ReduxProvider store={store}>
           <div className="App">
-            {this.state.filter ? <Filter /> : null}
-            <button
-              style={{ zIndex: '99998' }}
-              onClick={() => {
-                this.setState({ generator: !this.state.generator });
-              }}
-            >
-              Toggle generator
-            </button>
-            <button
-              style={{ zIndex: '100000', position: 'absolute' }}
-              onClick={() => {
-                this.setState({ filter: !this.state.filter });
-              }}
-            >
-              Toggle Filter
-            </button>
             <div
               className={
                 this.state.theme === 'light' ? 'App-light' : 'App-dark'
               }
             >
-              <SideDashboard />
-              <HeartClicker />
+              <Screen />
             </div>
-            {this.state.generator ? (
-              <>
-                <HeartScreenGenerator />
-                <HeartScreenGenerator />
-                <HeartScreenGenerator />
-                <HeartScreenGenerator />
-                <HeartScreenGenerator />
-                <HeartScreenGenerator />
-                <HeartScreenGenerator />
-                <HeartScreenGenerator />
-              </>
-            ) : null}
           </div>
         </ReduxProvider>
       );
