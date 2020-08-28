@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import heart from './like.png';
 import { setHeartPlume } from '../../redux/actions/heartPlumeActions';
+import cuteFrog from './cuteFrog.png';
 
 const heartStyles = {
   heart: {
@@ -58,7 +59,7 @@ const HeartSpout = (props) => {
     <>
       {height > 10 ? (
         <img
-          src={heart}
+          src={cuteFrog}
           style={{
             ...heartStyles.heart,
             top: `${height}%`,

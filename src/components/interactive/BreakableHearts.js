@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PoppedHeart from './PoppedHeart';
+import model1 from './model1.jpg';
 
 const heartStyles = {
   heart: {
@@ -20,7 +21,7 @@ const BreakableHearts = (props) => {
   const [popped, setPopped] = useState(false);
   const [height, setHeight] = useState(80);
   const [removed, setRemoved] = useState(false);
-  const [velocity, setVelocity] = useState((Math.random() * 2 - 1 + 99) / 100);
+  const [velocity, setVelocity] = useState((Math.random() * 1.5 + 98) / 100);
 
   useEffect(() => {
     if (popped) {
@@ -58,7 +59,12 @@ const BreakableHearts = (props) => {
             top: `${height}%`,
           }}
         >
-          Heart
+          <img
+            src={model1}
+            style={{
+              width: '5vw',
+            }}
+          />
         </button>
       ) : !removed && popped ? (
         <div

@@ -4,6 +4,7 @@ import HeartSpout from './HeartSpout';
 import * as heartPlumeActions from '../../redux/actions/heartPlumeActions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import cuteFrog from './cuteFrog.png';
 
 const heartStyles = {
   heartStyle: {
@@ -48,7 +49,7 @@ const HeartClicker = () => {
         onClick={handleClick}
         style={{ ...heartStyles.heartStyle, zIndex: '99999' }}
       >
-        <img src={heart} style={{ margin: '0rem', width: `${width}vw` }} />
+        <img src={cuteFrog} style={{ margin: '0rem', width: `${width}vw` }} />
       </button>
       {heartsArray.map((entry) => (
         <HeartSpout key={entry.id} heartId={entry} removeHeart={removeHeart} />

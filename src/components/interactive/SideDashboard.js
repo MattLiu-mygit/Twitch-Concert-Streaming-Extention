@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import model1 from './model1.jpg';
 
 const SideDashboard = (props) => {
   const [dashboardOpen, setDashboardOpen] = useState(false);
@@ -11,11 +12,11 @@ const SideDashboard = (props) => {
             setDashboardOpen(!dashboardOpen);
           }}
         >
-          some icon
+          <img src={model1} style={{ height: '100%', opacity: '0.75' }} />
         </button>
         {dashboardOpen ? (
           <div style={{ ...styles.dashboard, zIndex: '100000' }}>
-            <h1>Dashboard stuff</h1>
+            <img src={model1} style={{ width: '100%', opacity: '0.75' }} />
           </div>
         ) : null}
       </div>
@@ -37,7 +38,7 @@ const styles = {
     width: '5%',
     height: '5%',
     color: 'white',
-    backgroundColor: 'red',
+    backgroundColor: 'rgba(0, 255, 255, 0.75)',
     marginLeft: '-0.5rem',
     position: 'absolute',
     top: '20%',
