@@ -5,7 +5,7 @@ const SideDashboard = (props) => {
   const [dashboardOpen, setDashboardOpen] = useState(false);
   return (
     <>
-      <div style={{ marginLeft: '3rem', zIndex: '100000' }}>
+      <div style={{ marginLeft: '3rem', zIndex: '100000'}}>
         <button
           style={{ ...styles.interactive, zIndex: '100000' }}
           onClick={() => {
@@ -44,7 +44,7 @@ const styles = {
     width: '25%',
     height: '50%',
     color: 'white',
-    backgroundColor: 'rgba(255, 255, 0, 0.5)',
+    backgroundColor: 'rgba(0, 255, 0, 0.5)',
     marginLeft: '-0.5rem',
     position: 'absolute',
     top: '25%',
